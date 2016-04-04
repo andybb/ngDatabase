@@ -10,7 +10,7 @@ function ngdbQuery($q, $cordovaSQLite) {
 	var _dbConnexion = function() {
 
 		_db = (window.cordova) ?
-			$cordovaSQLite.openDB('ngdb.db') :
+			$cordovaSQLite.openDB({name: 'ngdb.db', location: 'default', iosDatabaseLocation: 'default'}) :
 			window.openDatabase('ngdb.db', '1', 'ngdb.db', -1);
 
 		return (_db);
